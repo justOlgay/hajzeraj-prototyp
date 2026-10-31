@@ -1,0 +1,53 @@
+/* Kontakt – seitenspezifische Layouts (nach style.css laden) */
+
+
+/* Kontaktdaten + Formular */
+.contact{row-gap:clamp(56px,7vw,96px)}
+@media (min-width:900px){
+  .contact{align-items:start}
+  .contact__data{grid-column:1/6;position:sticky;top:calc(var(--header-h) + 32px)}
+  .contact__form{grid-column:7/13}
+}
+.contact__addr{display:grid;gap:1.1rem;margin-top:clamp(20px,2.4vw,32px);font-family:var(--font-display);font-weight:300;font-size:clamp(1.6rem,2.2vw,2.15rem);line-height:1.2;color:var(--ink)}
+.contact__name{font-size:clamp(2.1rem,3.2vw,3.1rem);line-height:1.05;letter-spacing:-.01em}
+.contact__list{margin:clamp(32px,4vw,56px) 0 0;border-top:1px solid var(--line)}
+.contact__list>div{display:grid;grid-template-columns:minmax(0,8.5rem) 1fr;align-items:baseline;gap:8px 16px;padding:clamp(16px,1.8vw,24px) 0;border-bottom:1px solid var(--line)}
+.contact__list dt{font-size:.72rem;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-soft)}
+.contact__list dd{margin:0;font-family:var(--font-display);font-weight:300;font-size:clamp(1.55rem,2.3vw,2.2rem);line-height:1.15;color:var(--ink);overflow-wrap:anywhere}
+.contact__list dd a{background:linear-gradient(var(--ochre),var(--ochre)) left bottom/0 1px no-repeat;padding-bottom:.08em;transition:color .4s,background-size .6s var(--ease)}
+.contact__list dd a:hover,.contact__list dd a:focus-visible{color:var(--moss);background-size:100% 1px}
+.contact__todo{font-family:var(--font-ui)!important;font-size:1rem!important}
+.contact__todo .todo{margin-left:0}
+@media (max-width:420px){.contact__list>div{grid-template-columns:1fr}}
+
+/* Formular */
+.contact__form .form{margin-top:clamp(28px,3.4vw,48px)}
+.form__row{display:grid;gap:clamp(24px,3vw,36px)}
+@media (min-width:640px){.form__row{grid-template-columns:repeat(2,minmax(0,1fr));column-gap:clamp(24px,3vw,40px)}}
+@media (min-width:900px) and (max-width:1199px){.form__row{grid-template-columns:1fr}}
+.field--check{gap:.6rem}
+.field--check .field__error{padding-left:34px}
+.form__actions{margin-top:4px}
+.form__note{max-width:52ch}
+.form-done{display:none}
+.form-done.is-shown{display:block;margin-top:clamp(28px,3.4vw,48px);padding:clamp(28px,4vw,56px);border:1px solid var(--line);border-left:1px solid var(--ochre);background:var(--paper-2);outline:none}
+.form-done__title{font-family:var(--font-display);font-weight:300;font-size:clamp(2.2rem,3.6vw,3.4rem);line-height:1.05;color:var(--ink);margin-bottom:.4em}
+.section .form-done p{max-width:44ch;color:var(--ink-soft)}
+.section .form-done .form__note{margin-top:1.4em;padding-top:1em;border-top:1px solid var(--line);font-size:.875rem}
+.section .form-done .form-done__title{color:var(--ink)}
+
+/* Anfahrt */
+.anfahrt{padding-top:0}
+.anfahrt .container{border-top:1px solid var(--line);padding-top:clamp(64px,8vw,128px)}
+.anfahrt__addr{font-family:var(--font-display);font-weight:300;font-size:clamp(1.5rem,2vw,1.9rem);line-height:1.25;color:var(--ink)}
+.map{position:relative;width:100%;height:clamp(500px,125vw,600px);background:var(--paper-2);overflow:hidden;color:var(--ink)}
+@media (min-width:900px){.map{height:auto;aspect-ratio:16/9}}
+.map__ph{position:absolute;inset:0;background:var(--paper-2)}
+.map__svg{position:absolute;inset:0;width:100%;height:100%}
+.map__pin{position:absolute;left:50%;top:44%;width:14px;height:14px;margin:-7px 0 0 -7px;border-radius:50%;background:var(--moss);box-shadow:0 0 0 6px rgba(110,106,63,.18),0 0 0 18px rgba(110,106,63,.08)}
+.map__panel{position:absolute;left:var(--p,16px);right:var(--p,16px);bottom:var(--p,16px);display:grid;gap:20px;justify-items:start;padding:clamp(20px,2.4vw,32px);background:rgba(243,239,231,.96);border-top:1px solid var(--ochre)}
+@media (min-width:900px){.map__panel{--p:clamp(20px,2.4vw,36px);right:auto;width:min(27rem,46%)}}
+.section .map__panel p{font-size:.95rem;line-height:1.6;max-width:none;color:var(--ink-soft)}
+.map__frame{position:absolute;inset:0;width:100%;height:100%;border:0;display:block}
+.map__links{display:flex;flex-wrap:wrap;align-items:center;gap:12px 8px;margin-top:24px;max-width:none!important}
+.map__links .todo{margin-left:1.2em}
