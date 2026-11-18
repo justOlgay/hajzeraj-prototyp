@@ -41,12 +41,12 @@
   --col-gap:clamp(16px,2vw,32px);
   --section:clamp(96px,13vw,200px);
   --section-sm:clamp(64px,8vw,120px);
-  --header-h:84px;
+  --header-h:104px;
   --ease:cubic-bezier(.2,.7,.1,1);
   --radius:2px;
   --nav-bp:1040px; /* nur Referenz – Media Queries unten nutzen 1040px */
 }
-@media (max-width:1039px){:root{--header-h:68px}}
+@media (max-width:1039px){:root{--header-h:78px}}
 
 /* ---------- Reset ---------- */
 *,*::before,*::after{box-sizing:border-box}
@@ -155,7 +155,9 @@ a:hover>.arrow,button:hover>.arrow,.card:hover .arrow,.ref:hover .arrow{transfor
 .site-header.is-hidden{transform:translateY(-101%)}
 html.menu-open .site-header{background:transparent;-webkit-backdrop-filter:none;backdrop-filter:none;border-bottom-color:transparent;transform:none}
 .site-header__inner{height:100%;display:flex;align-items:center;gap:clamp(20px,2.6vw,44px)}
-.site-header__logo{display:block;width:clamp(130px,12vw,175px);color:var(--ink);flex:none;margin-right:auto}
+.site-header__logo{display:block;width:clamp(170px,17vw,250px);color:var(--ink);flex:none;margin-right:auto;transition:width .6s var(--ease)}
+.site-header.is-scrolled .site-header__logo{width:clamp(160px,14vw,205px)}
+@media (max-width:1039px){.site-header__logo,.site-header.is-scrolled .site-header__logo{width:172px}}
 .logo{width:100%;height:auto;fill:currentColor}
 .nav__list{display:flex;align-items:center;gap:clamp(20px,2.4vw,40px)}
 .nav__link{position:relative;display:block;padding:.6em 0;font-weight:400;font-size:.78rem;letter-spacing:.16em;text-transform:uppercase;color:var(--ink)}
